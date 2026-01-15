@@ -1,34 +1,21 @@
 var express = require('express');
 var router = express.Router();
-var pool = require( '../sql/funcionarios_views.js');
+var {getFuncionarios, getFuncionariosbyID} = require( '../database/config');
 
 router.get('/', async function (req, res, next) {
-  let connection;
   try {
-    connection = await pool.getConnection();
-    const [rows, fields] = await connection.query('select * from funcionarios');
-    res.json(rows)
-  } catch (err) {
-    res.status(500).json({error: 'internal server error'})
-  } finally {
-  if (connection) connection.release();
+    res.json(await getFuncionarios());
+  } catch (error) {
+    res.status(500).json(error);
   }
-    
-  
 });
 
 router.get('/:id', async function(req,res, next) {
-  let connection;
   try {
     const userId = req.params.id;
-    connection = await pool.getConnection();
-    const [rows, fields] = await connection.query(`select * from funcionarios where funcionario_id = ${userId}`)
-    res.json(rows)
-  } catch (err) {
-    res.status(500).json({error: 'internal server error'})
-  } finally {
-  if (connection) connection.release();
+    res.json(await getFuncionariosbyID(userId));
+  } catch (error) {
+    res.status(500).json(error);
   }
-  
 })
 module.exports = router;
