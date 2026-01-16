@@ -1,0 +1,154 @@
+/* ================================
+   VARIÁVEIS DE CORES (PALETA)
+================================ */
+:root {
+  --bg-dark: #080708;
+  --card-bg: #1a1a1a;
+  --blue-primary: #3772FF;
+  --yellow-highlight: #FDCA40;
+  --red-error: #DF2935;
+  --gray-light: #E6E8E6;
+  --text-light: #ffffff;
+}
+
+/* ================================
+   RESET BÁSICO
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================================
+   FUNDO GERAL
+================================ */
+body {
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+}
+
+/* ================================
+   CARD DE LOGIN
+================================ */
+.card {
+  background-color: var(--card-bg);
+  width: 360px;
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+/* ================================
+   ÍCONE / LOGO
+================================ */
+.card .icon {
+  font-size: 48px;
+  color: var(--yellow-highlight);
+  margin-bottom: 16px;
+}
+
+/* ================================
+   TÍTULO
+================================ */
+.card h1 {
+  margin-bottom: 24px;
+  font-size: 22px;
+}
+
+/* ================================
+   CAMPOS DE INPUT
+================================ */
+.input-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+  color: var(--gray-light);
+}
+
+.input-group input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-color: var(--gray-light);
+  color: #000;
+  font-size: 14px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--blue-primary);
+  box-shadow: 0 0 0 2px rgba(55, 114, 255, 0.3);
+}
+
+/* ================================
+   BOTÃO
+================================ */
+button, .submit-button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--blue-primary);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(55, 114, 255, 0.4);
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover, .submit-button:hover {
+  background-color: #4b83ff;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(55, 114, 255, 0.6);
+}
+
+/* ================================
+   VALIDAÇÃO / ERROS
+================================ */
+.error {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--red-error);
+}
+
+/* ================================
+   LINKS AUXILIARES
+================================ */
+.link {
+  margin-top: 16px;
+  display: block;
+  font-size: 14px;
+  color: var(--yellow-highlight);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* ================================
+   RESPONSIVO
+================================ */
+@media (max-width: 420px) {
+  .card {
+    width: 90%;
+    padding: 24px;
+  }
+}
