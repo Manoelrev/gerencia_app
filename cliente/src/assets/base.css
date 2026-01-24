@@ -2,13 +2,13 @@
    VARIÁVEIS DE CORES (PALETA)
 ================================ */
 :root {
-  --bg-dark: #080708;
-  --card-bg: #1a1a1a;
-  --blue-primary: #3772FF;
-  --yellow-highlight: #FDCA40;
-  --red-error: #DF2935;
+  --bg-dark: #f8f9fa;
+  --card-bg: #ffffff;
+  --blue-primary: #2563eb;
+  --yellow-highlight: #f59e0b;
+  --red-error: #dc2626;
   --gray-light: #E6E8E6;
-  --text-light: #ffffff;
+  --text-light: #111827;
 }
 
 /* ================================
@@ -28,7 +28,7 @@ body {
   min-height: 100vh;
   background-color: var(--bg-dark);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   color: var(--text-light);
